@@ -115,7 +115,7 @@ export const handler = async (event) => {
                 to: process.env.TO_EMAIL || 'pablo@dolphintech.io',
                 from: {
                     email: process.env.FROM_EMAIL,
-                    name: 'SioSalud - Formulario Web'
+                    name: 'LoreSalud - Formulario Web'
                 },
                 subject: `Nuevo mensaje de contacto de ${nombre}`,
                 text: `
