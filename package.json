@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lore-salud/form-handler.git"
+    "url": "https://github.com/pabdominguez/vrr-form-handler.git"
   },
   "author": "Dolphin Technologies, Inc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lore-salud/form-handler/issues"
+    "url": "https://github.com/pabdominguez/vrr-form-handler.git"
   },
-  "homepage": "https://github.com/lore-salud/form-handler#readme",
+  "homepage": "https://github.com/pabdominguez/vrr-form-handler.git",
   "dependencies": {
     "@sendgrid/mail": "^8.1.5",
     "dotenv": "^17.2.1"
