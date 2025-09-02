@@ -49,7 +49,7 @@ export const handler = async (event) => {
                     },
                     body: JSON.stringify({
                         success: false,
-                        message: 'Todos los campos son requeridos: email, nombre, consulta'
+                        message: 'All fields are required: email, name, inquiry'
                     })
                 };
             }
@@ -64,7 +64,7 @@ export const handler = async (event) => {
                     },
                     body: JSON.stringify({
                         success: false,
-                        message: 'Por favor, completa el reCAPTCHA'
+                        message: 'Please complete the reCAPTCHA'
                     })
                 };
             }
@@ -81,7 +81,7 @@ export const handler = async (event) => {
                     },
                     body: JSON.stringify({
                         success: false,
-                        message: 'Error de configuración del servidor'
+                        message: 'Server configuration error'
                     })
                 };
             }
@@ -106,7 +106,7 @@ export const handler = async (event) => {
                     },
                     body: JSON.stringify({
                         success: false,
-                        message: 'Verificación de reCAPTCHA falló. Por favor, intenta de nuevo.'
+                        message: 'reCAPTCHA verification failed. Please try again.'
                     })
                 };
             }
@@ -117,17 +117,17 @@ export const handler = async (event) => {
                     email: process.env.FROM_EMAIL,
                     name: 'VRR - WEB FORM'
                 },
-                subject: `Nuevo mensaje de contacto de ${nombre}`,
+                subject: `New contact message from ${nombre}`,
                 text: `
-                    Nombre: ${nombre}
+                    Name: ${nombre}
                     Email: ${email}
-                    Consulta: ${consulta}
+                    Inquiry: ${consulta}
                 `,
                 html: `
-                    <h3>Nuevo mensaje de contacto</h3>
-                    <p><strong>Nombre:</strong> ${nombre}</p>
+                    <h3>New contact message</h3>
+                    <p><strong>Name:</strong> ${nombre}</p>
                     <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Consulta:</strong></p>
+                    <p><strong>Inquiry:</strong></p>
                     <p>${consulta}</p>
                 `
             };
@@ -142,7 +142,7 @@ export const handler = async (event) => {
                 },
                 body: JSON.stringify({
                     success: true,
-                    message: 'Mensaje enviado exitosamente'
+                    message: 'Message sent successfully'
                 })
             };
         } catch (error) {
@@ -155,7 +155,7 @@ export const handler = async (event) => {
                 },
                 body: JSON.stringify({
                     success: false,
-                    message: 'Error al enviar el mensaje'
+                    message: 'Error sending message'
                 })
             };
         }
