@@ -124,11 +124,83 @@ export const handler = async (event) => {
                     Inquiry: ${consulta}
                 `,
                 html: `
-                    <h3>New contact message</h3>
-                    <p><strong>Name:</strong> ${nombre}</p>
-                    <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Inquiry:</strong></p>
-                    <p>${consulta}</p>
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    </head>
+                    <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+                        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px;">
+                            <tr>
+                                <td align="center">
+                                    <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                        <!-- Header -->
+                                        <tr>
+                                            <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 8px 8px 0 0;">
+                                                <h1 style="margin: 0; color: #ffffff; font-size: 24px; text-align: center;">New Contact Form Submission</h1>
+                                            </td>
+                                        </tr>
+                                        
+                                        <!-- Content -->
+                                        <tr>
+                                            <td style="padding: 30px;">
+                                                <p style="color: #666; margin: 0 0 20px 0; font-size: 16px;">You have received a new contact form submission from your website:</p>
+                                                
+                                                <!-- Contact Details -->
+                                                <table width="100%" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #667eea; margin-bottom: 10px;">
+                                                            <p style="margin: 0 0 5px 0; color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Name</p>
+                                                            <p style="margin: 0; color: #333; font-size: 16px; font-weight: 500;">${nombre}</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 10px;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #667eea; margin-bottom: 10px;">
+                                                            <p style="margin: 0 0 5px 0; color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Email Address</p>
+                                                            <p style="margin: 0; color: #333; font-size: 16px; font-weight: 500;">
+                                                                <a href="mailto:${email}" style="color: #667eea; text-decoration: none;">${email}</a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 10px;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #667eea;">
+                                                            <p style="margin: 0 0 5px 0; color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Message</p>
+                                                            <p style="margin: 0; color: #333; font-size: 16px; line-height: 1.5; white-space: pre-wrap;">${consulta}</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                
+                                                <!-- Reply Button -->
+                                                <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 30px;">
+                                                    <tr>
+                                                        <td align="center">
+                                                            <a href="mailto:${email}" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; text-decoration: none; border-radius: 5px; font-weight: 500; font-size: 14px;">Reply to ${nombre}</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        
+                                        <!-- Footer -->
+                                        <tr>
+                                            <td style="padding: 20px; background-color: #f8f9fa; border-radius: 0 0 8px 8px; text-align: center;">
+                                                <p style="margin: 0; color: #999; font-size: 12px;">This email was sent from your VRR website contact form</p>
+                                                <p style="margin: 5px 0 0 0; color: #999; font-size: 12px;">Timestamp: ${new Date().toLocaleString()}</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </body>
+                    </html>
                 `
             };
             
